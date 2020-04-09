@@ -10,6 +10,7 @@
   <link href="gwdgooglead_style.css" rel="stylesheet" data-version="8" data-exports-type="gwd-google-ad">
   <link href="gwdimage_style.css" rel="stylesheet" data-version="14" data-exports-type="gwd-image">
   <link href="gwdtaparea_style.css" rel="stylesheet" data-version="7" data-exports-type="gwd-taparea">
+  <link href="gwdgesture_style.css" rel="stylesheet" data-version="7" data-exports-type="gwd-gesture">
   <style type="text/css" id="gwd-lightbox-style">.gwd-lightbox {
     overflow: hidden;
 }</style>
@@ -94,6 +95,13 @@ body {
     height: 100%;
     width: 80%;
     left: 20%;
+}
+.gwd-gesture-37wr {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
 }</style><style type="text/css" data-gwd-secondary-animations="">#page1.gwd-play-animation .event-1-animation {
     animation: 0.0001s linear 0s 1 normal forwards gwd-empty-animation;
     -webkit-animation: 0.0001s linear 0s 1 normal forwards gwd-empty-animation;
@@ -130,7 +138,6 @@ body {
   <script data-source="https://s0.2mdn.net/ads/studio/Enabler.js" data-exports-type="gwd-google-ad" src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
   <script data-source="gwdgooglead_min.js" data-version="8" data-exports-type="gwd-google-ad" src="gwdgooglead_min.js"></script>
   <script data-source="gwdimage_min.js" data-version="14" data-exports-type="gwd-image" src="gwdimage_min.js"></script>
-  <script data-source="gwdtaparea_min.js" data-version="7" data-exports-type="gwd-taparea" src="gwdtaparea_min.js"></script>
   <script type="text/javascript" gwd-events="support" src="gwd-events-support.1.0.js"></script>
   <script type="text/javascript" gwd-events="handlers">
     gwd.auto_Gwd_taparea_1Mousedown = function(event) {
@@ -145,13 +152,23 @@ body {
       // GWD Predefined Function
       gwd.actions.events.setInlineStyle('draggable', 'transition: all 0.5s linear; opacity: 0;');
     };
-    gwd.auto_Gwd_taparea_1Touchmove = function(event) {
+    gwd.auto_Touch_areaTouchmove = function(event) {
       // GWD Predefined Function
       gwd.actions.events.setInlineStyle('frame-1', 'transition: all 0.5s linear; opacity: 0;');
+    };
+    gwd.auto_Touch_areaTouchmove1 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.events.setInlineStyle('wording-1', 'transition: all 0.5s linear; opacity: 0;');
+    };
+    gwd.auto_Touch_areaTouchmove2 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.events.setInlineStyle('draggable', 'transition: all 0.5s linear; opacity: 0;');
     };
   </script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js">
+  </script>
   <script>
     $(function() {
       $('#draggable').draggable({
@@ -166,17 +183,23 @@ body {
       gwd.actions.events.addHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mousedown, false);
       gwd.actions.events.addHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mouseup, false);
       gwd.actions.events.addHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mouseup1, false);
-      gwd.actions.events.addHandler('gwd-taparea_1', 'touchmove', gwd.auto_Gwd_taparea_1Touchmove, false);
+      gwd.actions.events.addHandler('touch-area', 'touchmove', gwd.auto_Touch_areaTouchmove, false);
+      gwd.actions.events.addHandler('touch-area', 'touchmove', gwd.auto_Touch_areaTouchmove1, false);
+      gwd.actions.events.addHandler('touch-area', 'touchmove', gwd.auto_Touch_areaTouchmove2, false);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
       gwd.actions.events.removeHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mousedown, false);
       gwd.actions.events.removeHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mouseup, false);
       gwd.actions.events.removeHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mouseup1, false);
-      gwd.actions.events.removeHandler('gwd-taparea_1', 'touchmove', gwd.auto_Gwd_taparea_1Touchmove, false);
+      gwd.actions.events.removeHandler('touch-area', 'touchmove', gwd.auto_Touch_areaTouchmove, false);
+      gwd.actions.events.removeHandler('touch-area', 'touchmove', gwd.auto_Touch_areaTouchmove1, false);
+      gwd.actions.events.removeHandler('touch-area', 'touchmove', gwd.auto_Touch_areaTouchmove2, false);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
     document.addEventListener("unload", gwd.actions.events.deregisterEventHandlers);
   </script>
+  <script data-source="gwdtaparea_min.js" data-version="7" data-exports-type="gwd-taparea" src="gwdtaparea_min.js"></script>
+  <script data-source="gwdgesture_min.js" data-version="7" data-exports-type="gwd-gesture" src="gwdgesture_min.js"></script>
 </head>
 
 <body>
@@ -187,12 +210,13 @@ body {
     <gwd-pagedeck class="gwd-page-container" id="pagedeck">
       <gwd-page id="page1" class="gwd-page-wrapper gwd-page-size gwd-lightbox" data-gwd-width="640px" data-gwd-height="960px">
         <div class="gwd-page-content gwd-page-size">
-          <gwd-image id="frame_2" source="1010_5G_countdown_Interactive_Ad_VR_Football_OP_070420-02.jpg?1586433376442" scaling="stretch" class="gwd-image-16hs"></gwd-image>
-          <gwd-image id="frame-1" source="1010_5G_countdown_Interactive_ad_640x960_Dinning_SC1_OP_310320.jpg?1586433376442" scaling="stretch" class="gwd-image-2w2d"></gwd-image>
-          <gwd-image id="wording-1" source="1010_5G_countdown_Interactive_Ad_Dinning_OP_070420-06.png?1586433376442" scaling="stretch" class="gwd-image-7aio"></gwd-image>
-          <gwd-image id="draggable" source="1010_5G_countdown_Interactive_Ad_Dinning_OP_070420-07.png?1586433376442" scaling="stretch" class="gwd-image-it49"></gwd-image>
+          <gwd-image id="frame_2" source="1010_5G_countdown_Interactive_Ad_VR_Football_OP_070420-02.jpg?1586448797589" scaling="stretch" class="gwd-image-16hs"></gwd-image>
+          <gwd-image id="frame-1" source="1010_5G_countdown_Interactive_ad_640x960_Dinning_SC1_OP_310320.jpg?1586448797589" scaling="stretch" class="gwd-image-2w2d"></gwd-image>
+          <gwd-image id="wording-1" source="1010_5G_countdown_Interactive_Ad_Dinning_OP_070420-06.png?1586448797589" scaling="stretch" class="gwd-image-7aio"></gwd-image>
           <gwd-taparea id="gwd-taparea_1" class="gwd-taparea-f7rt"></gwd-taparea>
           <div class="gwd-animation-event event-1-animation" data-event-name="event-1" data-event-time="0.1"></div>
+          <gwd-gesture id="touch-area" class="gwd-gesture-37wr"></gwd-gesture>
+          <gwd-image id="draggable" source="1010_5G_countdown_Interactive_Ad_Dinning_OP_070420-07.png?1586448797589" scaling="stretch" class="gwd-image-it49"></gwd-image>
         </div>
       </gwd-page>
     </gwd-pagedeck>
@@ -237,4 +261,4 @@ body {
 
 
 <script data-exports-type="gwd-studio-registration">function StudioExports() {
-}</script><script type="text/gwd-admetadata">{"version":1,"type":"GoogleAd","format":"","template":"Banner 3.0.0","politeload":false,"fullscreen":false,"counters":[],"timers":[],"exits":[],"creativeProperties":{"minWidth":640,"minHeight":960,"maxWidth":640,"maxHeight":960},"components":["gwd-google-ad","gwd-image","gwd-page","gwd-pagedeck","gwd-taparea"],"responsive":false}</script><script data-exports-type="dclk-quick-preview">studio.Enabler.setRushSimulatedLocalEvents(true);</script></body></html>
+}</script><script type="text/gwd-admetadata">{"version":1,"type":"GoogleAd","format":"","template":"Banner 3.0.0","politeload":false,"fullscreen":false,"counters":[],"timers":[],"exits":[],"creativeProperties":{"minWidth":640,"minHeight":960,"maxWidth":640,"maxHeight":960},"components":["gwd-gesture","gwd-google-ad","gwd-image","gwd-page","gwd-pagedeck","gwd-taparea"],"responsive":false}</script><script data-exports-type="dclk-quick-preview">studio.Enabler.setRushSimulatedLocalEvents(true);</script></body></html>
