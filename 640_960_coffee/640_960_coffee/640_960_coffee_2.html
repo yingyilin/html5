@@ -119,11 +119,19 @@
       // GWD Predefined Function
       gwd.actions.events.setInlineStyle('frame-1', 'transition: all 0.5s linear; opacity: 0;');
     };
+    gwd.auto_Gwd_taparea_1Touchenter = function(event) {
+      // GWD Predefined Function
+      gwd.actions.events.setInlineStyle('wording-1', 'transition: all 0.5s linear; opacity: 0;');
+    };
+    gwd.auto_Gwd_taparea_1Touchenter1 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.events.setInlineStyle('draggable', 'transition: all 0.5s linear; opacity: 0;');
+    };
   </script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js">     </script>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js">
+  </script>
   <script>
     $(function() {
       $('#draggable').draggable({
@@ -138,13 +146,17 @@
       gwd.actions.events.addHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mousedown, false);
       gwd.actions.events.addHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mouseup, false);
       gwd.actions.events.addHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mouseup1, false);
-      gwd.actions.events.addHandler('gwd-taparea_1', 'touchmove', gwd.auto_Gwd_taparea_1Touchmove, false);
+      gwd.actions.events.addHandler('gwd-taparea_1', 'touchenter', gwd.auto_Gwd_taparea_1Touchmove, false);
+      gwd.actions.events.addHandler('gwd-taparea_1', 'touchenter', gwd.auto_Gwd_taparea_1Touchenter, false);
+      gwd.actions.events.addHandler('gwd-taparea_1', 'touchenter', gwd.auto_Gwd_taparea_1Touchenter1, false);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
       gwd.actions.events.removeHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mousedown, false);
       gwd.actions.events.removeHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mouseup, false);
       gwd.actions.events.removeHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mouseup1, false);
-      gwd.actions.events.removeHandler('gwd-taparea_1', 'touchmove', gwd.auto_Gwd_taparea_1Touchmove, false);
+      gwd.actions.events.removeHandler('gwd-taparea_1', 'touchenter', gwd.auto_Gwd_taparea_1Touchmove, false);
+      gwd.actions.events.removeHandler('gwd-taparea_1', 'touchenter', gwd.auto_Gwd_taparea_1Touchenter, false);
+      gwd.actions.events.removeHandler('gwd-taparea_1', 'touchenter', gwd.auto_Gwd_taparea_1Touchenter1, false);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
     document.addEventListener("unload", gwd.actions.events.deregisterEventHandlers);
