@@ -146,17 +146,17 @@
       gwd.actions.events.addHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mousedown, false);
       gwd.actions.events.addHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mouseup, false);
       gwd.actions.events.addHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mouseup1, false);
-      gwd.actions.events.addHandler('gwd-taparea_1', 'touchenter', gwd.auto_Gwd_taparea_1Touchmove, false);
-      gwd.actions.events.addHandler('gwd-taparea_1', 'touchenter', gwd.auto_Gwd_taparea_1Touchenter, false);
-      gwd.actions.events.addHandler('gwd-taparea_1', 'touchenter', gwd.auto_Gwd_taparea_1Touchenter1, false);
+      gwd.actions.events.addHandler('gwd-taparea_1', 'touchend', gwd.auto_Gwd_taparea_1Touchmove, false);
+      gwd.actions.events.addHandler('gwd-taparea_1', 'touchend', gwd.auto_Gwd_taparea_1Touchenter, false);
+      gwd.actions.events.addHandler('gwd-taparea_1', 'touchend', gwd.auto_Gwd_taparea_1Touchenter1, false);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
       gwd.actions.events.removeHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mousedown, false);
       gwd.actions.events.removeHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mouseup, false);
       gwd.actions.events.removeHandler('gwd-taparea_1', 'mouseup', gwd.auto_Gwd_taparea_1Mouseup1, false);
-      gwd.actions.events.removeHandler('gwd-taparea_1', 'touchenter', gwd.auto_Gwd_taparea_1Touchmove, false);
-      gwd.actions.events.removeHandler('gwd-taparea_1', 'touchenter', gwd.auto_Gwd_taparea_1Touchenter, false);
-      gwd.actions.events.removeHandler('gwd-taparea_1', 'touchenter', gwd.auto_Gwd_taparea_1Touchenter1, false);
+      gwd.actions.events.removeHandler('gwd-taparea_1', 'touchend', gwd.auto_Gwd_taparea_1Touchmove, false);
+      gwd.actions.events.removeHandler('gwd-taparea_1', 'touchend', gwd.auto_Gwd_taparea_1Touchenter, false);
+      gwd.actions.events.removeHandler('gwd-taparea_1', 'touchend', gwd.auto_Gwd_taparea_1Touchenter1, false);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
     document.addEventListener("unload", gwd.actions.events.deregisterEventHandlers);
