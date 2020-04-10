@@ -12,6 +12,7 @@
   <link href="gwdgooglead_style.css" rel="stylesheet" data-version="8" data-exports-type="gwd-google-ad">
   <link href="gwdimage_style.css" rel="stylesheet" data-version="14" data-exports-type="gwd-image">
   <link href="gwdgesture_style.css" rel="stylesheet" data-version="7" data-exports-type="gwd-gesture">
+  <link href="gwdtaparea_style.css" rel="stylesheet" data-version="7" data-exports-type="gwd-taparea">
   <style type="text/css" id="gwd-lightbox-style">
     .gwd-lightbox {
       overflow: hidden;
@@ -71,9 +72,9 @@
       position: absolute;
       top: 0%;
       height: 100%;
-      width: 237px;
-      left: -7%;
       opacity: 1;
+      width: 163px;
+      left: 0%;
     }
     .gwd-image-7aio {
       position: absolute;
@@ -280,36 +281,12 @@
       width: 40%;
       left: 60%;
     }
-    .gwd-image-1f9h {
+    .gwd-taparea-18qj {
       position: absolute;
-      width: 237px;
-      height: 960px;
-      top: 0px;
-      left: -44px;
-      opacity: 0;
-    }
-    @keyframes gwd-gen-1ojngwdanimation_gwd-keyframes {
-      0% {
-        left: -44px;
-        top: 0px;
-        opacity: 0;
-        animation-timing-function: linear;
-      }
-      50% {
-        left: 31px;
-        top: 0px;
-        opacity: 0;
-        animation-timing-function: linear;
-      }
-      100% {
-        left: -44px;
-        top: 0px;
-        opacity: 0;
-        animation-timing-function: linear;
-      }
-    }
-    #page1.gwd-play-animation .gwd-gen-1ojngwdanimation {
-      animation: 1.4s linear 0s 1 normal forwards running gwd-gen-1ojngwdanimation_gwd-keyframes;
+      left: 0%;
+      top: 0%;
+      width: 100%;
+      height: 100%;
     }
   </style>
   <script data-source="googbase_min.js" data-version="4" data-exports-type="googbase" src="googbase_min.js"></script>
@@ -337,6 +314,10 @@
       // GWD Predefined Function
       gwd.actions.gwdGoogleAd.goToPage('gwd-ad', 'page1_1', 'none', 1000, 'linear', 'top');
     };
+    gwd.auto_Gwd_taparea_1Click = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdGoogleAd.exitOverride('gwd-ad', 'url', 'http://www.google.com', true, true, 'page1_1');
+    };
   </script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -348,7 +329,7 @@
         var yy = event.pageY;
         var y2 = yy - 50;
         var xx = event.pageX;
-        var x2 = xx - 80;
+        var x2 = xx - 81;
         $("#draggable").css({
           "left": xx + "px",
         })
@@ -367,6 +348,7 @@
       gwd.actions.events.addHandler('page1', 'AnimationEnd', gwd.auto_Page1AnimationEnd, false);
       gwd.actions.events.addHandler('draggable', 'mouseup', gwd.auto_DraggableTouchmove, false);
       gwd.actions.events.addHandler('track', 'mouseover', gwd.auto_TrackMouseover, false);
+      gwd.actions.events.addHandler('gwd-taparea_1', 'action', gwd.auto_Gwd_taparea_1Click, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
@@ -374,25 +356,28 @@
       gwd.actions.events.removeHandler('page1', 'AnimationEnd', gwd.auto_Page1AnimationEnd, false);
       gwd.actions.events.removeHandler('draggable', 'mouseup', gwd.auto_DraggableTouchmove, false);
       gwd.actions.events.removeHandler('track', 'mouseover', gwd.auto_TrackMouseover, false);
+      gwd.actions.events.removeHandler('gwd-taparea_1', 'action', gwd.auto_Gwd_taparea_1Click, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
     document.addEventListener("unload", gwd.actions.events.deregisterEventHandlers);
   </script>
   <script data-source="gwdgesture_min.js" data-version="7" data-exports-type="gwd-gesture" src="gwdgesture_min.js"></script>
+  <script data-source="gwdtaparea_min.js" data-version="7" data-exports-type="gwd-taparea" src="gwdtaparea_min.js"></script>
 </head>
 
 <body>
   <gwd-google-ad id="gwd-ad" polite-load="">
-    <gwd-metric-configuration></gwd-metric-configuration>
+    <gwd-metric-configuration>
+      <gwd-metric-event source="gwd-taparea_1" event="tapareaexit" metric="" exit="Exit"></gwd-metric-event>
+    </gwd-metric-configuration>
     <gwd-pagedeck class="gwd-page-container" id="pagedeck">
       <gwd-page id="page1" class="gwd-page-wrapper gwd-page-size gwd-lightbox gwd-page-1h1e" data-gwd-width="640px" data-gwd-height="960px" data-gwd-animation-labels="AnimationStart,0">
         <div class="gwd-page-content gwd-page-size gwd-div-havw">
           <gwd-image id="frame-1" source="assets/1010_5G_countdown_Interactive ad_640x960_Dinning_SC1_OP_310320.jpg" scaling="stretch" class="gwd-image-2w2d"></gwd-image>
           <gwd-image id="wording-1" source="assets/1010_5G_countdown_Interactive Ad_Dinning_OP_070420-06.png" scaling="stretch" class="gwd-image-7aio"></gwd-image>
           <div class="gwd-animation-event AnimationEnd-animation" data-event-name="AnimationEnd" data-event-time="1400"></div>
-          <gwd-image id="beam-2" source="assets/beam-2.png" scaling="stretch" class="gwd-image-1f9h gwd-gen-1ojngwdanimation"></gwd-image>
-          <gwd-image id="draggable" source="assets/beam-2.png" scaling="stretch" class="gwd-image-it49"></gwd-image>
+          <gwd-image id="draggable" source="assets/beam-2_1.png" scaling="stretch" class="gwd-image-it49"></gwd-image>
           <gwd-gesture id="track" class="gwd-gesture-1idv"></gwd-gesture>
         </div>
       </gwd-page>
@@ -406,9 +391,11 @@
           <gwd-image id="promo-info" source="assets/promo-info.png" scaling="stretch" class="gwd-image-pgqa gwd-gen-1863gwdanimation"></gwd-image>
           <gwd-image id="product-info" source="assets/product-info.png" scaling="stretch" class="gwd-image-13qh gwd-gen-13nlgwdanimation"></gwd-image>
           <gwd-image id="frame-3" source="assets/frame-3.jpg" scaling="stretch" class="gwd-image-7x5b gwd-gen-8zyggwdanimation"></gwd-image>
+          <gwd-taparea id="gwd-taparea_1" class="gwd-taparea-18qj"></gwd-taparea>
         </div>
       </gwd-page>
     </gwd-pagedeck>
+    <gwd-exit metric="url" url="http://www.google.com"></gwd-exit>
   </gwd-google-ad>
   <script type="text/javascript" id="gwd-init-code">
     (function() {
