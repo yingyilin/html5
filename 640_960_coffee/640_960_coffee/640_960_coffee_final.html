@@ -70,11 +70,11 @@
     }
     .gwd-image-it49 {
       position: absolute;
-      top: 0%;
       height: 100%;
       opacity: 1;
       width: 163px;
       left: 0%;
+      top: 0%;
     }
     .gwd-image-7aio {
       position: absolute;
@@ -334,28 +334,31 @@
           "left": xx + "px",
         })
       });
+      
+      $("#draggable").draggable({
+                axis: "x"
+        });
+      
+      
     });
 
-    $(function() {
-      $("#draggable").draggable({});
-    });
   </script>
   <script type="text/javascript" gwd-events="registration">
     // Google Web Designer 中處理事件的支援程式碼
     // 這個指令碼區塊是自動產生的，請勿編輯！
     gwd.actions.events.registerEventHandlers = function(event) {
-      gwd.actions.events.addHandler('track', 'swiperight', gwd.auto_TrackTrack, false);
       gwd.actions.events.addHandler('page1', 'AnimationEnd', gwd.auto_Page1AnimationEnd, false);
       gwd.actions.events.addHandler('draggable', 'mouseup', gwd.auto_DraggableTouchmove, false);
       gwd.actions.events.addHandler('track', 'mouseover', gwd.auto_TrackMouseover, false);
+      gwd.actions.events.addHandler('track', 'swiperight', gwd.auto_TrackTrack, false);
       gwd.actions.events.addHandler('gwd-taparea_1', 'action', gwd.auto_Gwd_taparea_1Click, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
-      gwd.actions.events.removeHandler('track', 'swiperight', gwd.auto_TrackTrack, false);
       gwd.actions.events.removeHandler('page1', 'AnimationEnd', gwd.auto_Page1AnimationEnd, false);
       gwd.actions.events.removeHandler('draggable', 'mouseup', gwd.auto_DraggableTouchmove, false);
       gwd.actions.events.removeHandler('track', 'mouseover', gwd.auto_TrackMouseover, false);
+      gwd.actions.events.removeHandler('track', 'swiperight', gwd.auto_TrackTrack, false);
       gwd.actions.events.removeHandler('gwd-taparea_1', 'action', gwd.auto_Gwd_taparea_1Click, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };

@@ -73,11 +73,11 @@ body {
 }
 .gwd-image-it49 {
     position: absolute;
-    top: 0%;
     height: 100%;
     opacity: 1;
     width: 163px;
     left: 0%;
+    top: 0%;
 }
 .gwd-image-7aio {
     position: absolute;
@@ -639,28 +639,31 @@ body {
           "left": xx + "px",
         })
       });
+      
+      $("#draggable").draggable({
+                axis: "x"
+        });
+      
+      
     });
 
-    $(function() {
-      $("#draggable").draggable({});
-    });
   </script>
   <script type="text/javascript" gwd-events="registration">
     // Google Web Designer 中處理事件的支援程式碼
     // 這個指令碼區塊是自動產生的，請勿編輯！
     gwd.actions.events.registerEventHandlers = function(event) {
-      gwd.actions.events.addHandler('track', 'swiperight', gwd.auto_TrackTrack, false);
       gwd.actions.events.addHandler('page1', 'AnimationEnd', gwd.auto_Page1AnimationEnd, false);
       gwd.actions.events.addHandler('draggable', 'mouseup', gwd.auto_DraggableTouchmove, false);
       gwd.actions.events.addHandler('track', 'mouseover', gwd.auto_TrackMouseover, false);
+      gwd.actions.events.addHandler('track', 'swiperight', gwd.auto_TrackTrack, false);
       gwd.actions.events.addHandler('gwd-taparea_1', 'action', gwd.auto_Gwd_taparea_1Click, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
-      gwd.actions.events.removeHandler('track', 'swiperight', gwd.auto_TrackTrack, false);
       gwd.actions.events.removeHandler('page1', 'AnimationEnd', gwd.auto_Page1AnimationEnd, false);
       gwd.actions.events.removeHandler('draggable', 'mouseup', gwd.auto_DraggableTouchmove, false);
       gwd.actions.events.removeHandler('track', 'mouseover', gwd.auto_TrackMouseover, false);
+      gwd.actions.events.removeHandler('track', 'swiperight', gwd.auto_TrackTrack, false);
       gwd.actions.events.removeHandler('gwd-taparea_1', 'action', gwd.auto_Gwd_taparea_1Click, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
@@ -679,23 +682,23 @@ body {
     <gwd-pagedeck class="gwd-page-container" id="pagedeck">
       <gwd-page id="page1" class="gwd-page-wrapper gwd-page-size gwd-lightbox gwd-page-1h1e" data-gwd-width="640px" data-gwd-height="960px">
         <div class="gwd-page-content gwd-page-size gwd-div-havw">
-          <gwd-image id="frame-1" source="1010_5G_countdown_Interactive_ad_640x960_Dinning_SC1_OP_310320.jpg?1586493508647" scaling="stretch" class="gwd-image-2w2d"></gwd-image>
-          <gwd-image id="wording-1" source="1010_5G_countdown_Interactive_Ad_Dinning_OP_070420-06.png?1586493508647" scaling="stretch" class="gwd-image-7aio"></gwd-image>
+          <gwd-image id="frame-1" source="1010_5G_countdown_Interactive_ad_640x960_Dinning_SC1_OP_310320.jpg?1586495080580" scaling="stretch" class="gwd-image-2w2d"></gwd-image>
+          <gwd-image id="wording-1" source="1010_5G_countdown_Interactive_Ad_Dinning_OP_070420-06.png?1586495080580" scaling="stretch" class="gwd-image-7aio"></gwd-image>
           <div class="gwd-animation-event AnimationEnd-animation" data-event-name="AnimationEnd" data-event-time="1400"></div>
-          <gwd-image id="draggable" source="beam-2_1.png?1586493508647" scaling="stretch" class="gwd-image-it49"></gwd-image>
+          <gwd-image id="draggable" source="beam-2_1.png?1586495080580" scaling="stretch" class="gwd-image-it49"></gwd-image>
           <gwd-gesture id="track" class="gwd-gesture-1idv"></gwd-gesture>
         </div>
       </gwd-page>
       <gwd-page id="page1_1" class="gwd-page-wrapper gwd-lightbox gwd-page-1hqy" data-gwd-width="640px" data-gwd-height="960px" data-gwd-name="page2">
         <div class="gwd-page-content gwd-div-78kk">
-          <gwd-image id="frame-2-bg" source="frame-2-bg_1.jpg?1586493508647" scaling="stretch" class="gwd-image-1w0n"></gwd-image>
-          <gwd-image id="frame-2-wording" source="frame-2-wording.png?1586493508647" scaling="stretch" class="gwd-image-1v1t gwd-gen-1bj0gwdanimation"></gwd-image>
-          <gwd-image id="smartphone" source="smartphone.png?1586493508647" scaling="stretch" class="gwd-image-17gm gwd-gen-1utqgwdanimation"></gwd-image>
-          <gwd-image id="glow" source="glow.png?1586493508647" scaling="stretch" class="gwd-image-1u1f gwd-gen-1yopgwdanimation"></gwd-image>
-          <gwd-image id="logo" source="logo.png?1586493508647" scaling="stretch" class="gwd-image-5efu"></gwd-image>
-          <gwd-image id="promo-info" source="promo-info.png?1586493508647" scaling="stretch" class="gwd-image-pgqa gwd-gen-1863gwdanimation"></gwd-image>
-          <gwd-image id="product-info" source="product-info.png?1586493508647" scaling="stretch" class="gwd-image-13qh gwd-gen-13nlgwdanimation"></gwd-image>
-          <gwd-image id="frame-3" source="frame-3.jpg?1586493508647" scaling="stretch" class="gwd-image-7x5b gwd-gen-8zyggwdanimation"></gwd-image>
+          <gwd-image id="frame-2-bg" source="frame-2-bg_1.jpg?1586495080580" scaling="stretch" class="gwd-image-1w0n"></gwd-image>
+          <gwd-image id="frame-2-wording" source="frame-2-wording.png?1586495080580" scaling="stretch" class="gwd-image-1v1t gwd-gen-1bj0gwdanimation"></gwd-image>
+          <gwd-image id="smartphone" source="smartphone.png?1586495080580" scaling="stretch" class="gwd-image-17gm gwd-gen-1utqgwdanimation"></gwd-image>
+          <gwd-image id="glow" source="glow.png?1586495080580" scaling="stretch" class="gwd-image-1u1f gwd-gen-1yopgwdanimation"></gwd-image>
+          <gwd-image id="logo" source="logo.png?1586495080580" scaling="stretch" class="gwd-image-5efu"></gwd-image>
+          <gwd-image id="promo-info" source="promo-info.png?1586495080580" scaling="stretch" class="gwd-image-pgqa gwd-gen-1863gwdanimation"></gwd-image>
+          <gwd-image id="product-info" source="product-info.png?1586495080580" scaling="stretch" class="gwd-image-13qh gwd-gen-13nlgwdanimation"></gwd-image>
+          <gwd-image id="frame-3" source="frame-3.jpg?1586495080580" scaling="stretch" class="gwd-image-7x5b gwd-gen-8zyggwdanimation"></gwd-image>
           <gwd-taparea id="gwd-taparea_1" class="gwd-taparea-18qj"></gwd-taparea>
         </div>
       </gwd-page>
