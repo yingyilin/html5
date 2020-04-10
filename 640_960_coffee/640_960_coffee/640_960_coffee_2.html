@@ -71,9 +71,9 @@
       position: absolute;
       top: 0%;
       height: 100%;
-      width: 100%;
-      left: -37%;
-      opacity: 0;
+      width: 237px;
+      left: -7%;
+      opacity: 1;
     }
     .gwd-image-7aio {
       position: absolute;
@@ -276,8 +276,9 @@
       position: absolute;
       height: 100%;
       top: 0%;
-      width: 100%;
-      left: 0%;
+      margin: 0px;
+      width: 40%;
+      left: 60%;
     }
     .gwd-image-1f9h {
       position: absolute;
@@ -285,21 +286,25 @@
       height: 960px;
       top: 0px;
       left: -44px;
+      opacity: 0;
     }
     @keyframes gwd-gen-1ojngwdanimation_gwd-keyframes {
       0% {
         left: -44px;
         top: 0px;
+        opacity: 0;
         animation-timing-function: linear;
       }
       50% {
         left: 31px;
         top: 0px;
+        opacity: 0;
         animation-timing-function: linear;
       }
       100% {
         left: -44px;
         top: 0px;
+        opacity: 0;
         animation-timing-function: linear;
       }
     }
@@ -324,6 +329,14 @@
       // GWD Predefined Function
       gwd.actions.timeline.gotoAndPlay('page1', 'AnimationStart');
     };
+    gwd.auto_DraggableTouchmove = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdGoogleAd.goToPage('gwd-ad', 'page1_1', 'none', 1000, 'linear', 'top');
+    };
+    gwd.auto_TrackMouseover = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdGoogleAd.goToPage('gwd-ad', 'page1_1', 'none', 1000, 'linear', 'top');
+    };
   </script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -337,10 +350,13 @@
         var xx = event.pageX;
         var x2 = xx - 80;
         $("#draggable").css({
-          "top": y2 + "px",
-          "left": x2 + "px"
+          "left": xx + "px",
         })
       });
+    });
+
+    $(function() {
+      $("#draggable").draggable({});
     });
   </script>
   <script type="text/javascript" gwd-events="registration">
@@ -349,11 +365,15 @@
     gwd.actions.events.registerEventHandlers = function(event) {
       gwd.actions.events.addHandler('track', 'swiperight', gwd.auto_TrackTrack, false);
       gwd.actions.events.addHandler('page1', 'AnimationEnd', gwd.auto_Page1AnimationEnd, false);
+      gwd.actions.events.addHandler('draggable', 'mouseup', gwd.auto_DraggableTouchmove, false);
+      gwd.actions.events.addHandler('track', 'mouseover', gwd.auto_TrackMouseover, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
       gwd.actions.events.removeHandler('track', 'swiperight', gwd.auto_TrackTrack, false);
       gwd.actions.events.removeHandler('page1', 'AnimationEnd', gwd.auto_Page1AnimationEnd, false);
+      gwd.actions.events.removeHandler('draggable', 'mouseup', gwd.auto_DraggableTouchmove, false);
+      gwd.actions.events.removeHandler('track', 'mouseover', gwd.auto_TrackMouseover, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
@@ -364,15 +384,16 @@
 
 <body>
   <gwd-google-ad id="gwd-ad" polite-load="">
+    <gwd-metric-configuration></gwd-metric-configuration>
     <gwd-pagedeck class="gwd-page-container" id="pagedeck">
       <gwd-page id="page1" class="gwd-page-wrapper gwd-page-size gwd-lightbox gwd-page-1h1e" data-gwd-width="640px" data-gwd-height="960px" data-gwd-animation-labels="AnimationStart,0">
         <div class="gwd-page-content gwd-page-size gwd-div-havw">
           <gwd-image id="frame-1" source="assets/1010_5G_countdown_Interactive ad_640x960_Dinning_SC1_OP_310320.jpg" scaling="stretch" class="gwd-image-2w2d"></gwd-image>
           <gwd-image id="wording-1" source="assets/1010_5G_countdown_Interactive Ad_Dinning_OP_070420-06.png" scaling="stretch" class="gwd-image-7aio"></gwd-image>
-          <gwd-image id="draggable" source="assets/1010_5G_countdown_Interactive Ad_Dinning_OP_070420-07.png" scaling="stretch" class="gwd-image-it49"></gwd-image>
-          <gwd-image id="beam-2" source="assets/beam-2.png" scaling="stretch" class="gwd-image-1f9h gwd-gen-1ojngwdanimation"></gwd-image>
-          <gwd-gesture id="track" class="gwd-gesture-1idv"></gwd-gesture>
           <div class="gwd-animation-event AnimationEnd-animation" data-event-name="AnimationEnd" data-event-time="1400"></div>
+          <gwd-image id="beam-2" source="assets/beam-2.png" scaling="stretch" class="gwd-image-1f9h gwd-gen-1ojngwdanimation"></gwd-image>
+          <gwd-image id="draggable" source="assets/beam-2.png" scaling="stretch" class="gwd-image-it49"></gwd-image>
+          <gwd-gesture id="track" class="gwd-gesture-1idv"></gwd-gesture>
         </div>
       </gwd-page>
       <gwd-page id="page1_1" class="gwd-page-wrapper gwd-lightbox gwd-page-1hqy" data-gwd-width="640px" data-gwd-height="960px" data-gwd-name="page2">
