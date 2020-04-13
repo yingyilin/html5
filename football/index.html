@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><meta name="GCD" content="YTk3ODQ3ZWZhN2I4NzZmMzBkNTEwYjJl26909777ba411e97b6f5947babc6cb4e"/>
+<html><head><meta name="GCD" content="YTk3ODQ3ZWZhN2I4NzZmMzBkNTEwYjJl62fec73cd20693e5c4a0c6d9cc624a9d"/>
   <meta charset="utf-8">
   <meta name="generator" content="Google Web Designer 8.0.1.0401">
   <meta name="template" content="Interstitial 3.0.0">
@@ -58,7 +58,6 @@
             </div>
           </div>
         </div>
-
       </gwd-page>
     </gwd-pagedeck>
   </gwd-google-ad>
@@ -101,13 +100,17 @@
   </script>
   <script type="text/javascript">
     // Initialize buttons
-    jQuery(function($){ 
+
+    $(document).ready(function() {
       $(".toggle-switch-container.drag-path").pathDraggableButton({
         pathSelector: 'path',
         negative: true
-      }).on('finish', function(e){ 
-        $(this).animate({ opacity: 0 });
+      }).on('finish', function(e) {
+        $(this).animate({
+          opacity: 0
+        });
       });
+
     });
   </script>
 
