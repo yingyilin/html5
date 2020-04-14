@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><meta name="GCD" content="YTk3ODQ3ZWZhN2I4NzZmMzBkNTEwYjJl8b2a261d7a7e23aa22599ce7d9950cca"/>
+<html><head><meta name="GCD" content="YTk3ODQ3ZWZhN2I4NzZmMzBkNTEwYjJldfd107d95684b5e2fe06600c12c68701"/>
   <meta charset="utf-8">
   <meta name="generator" content="Google Web Designer 8.0.1.0401">
   <meta name="template" content="Interstitial 3.0.0">
@@ -229,12 +229,11 @@ set:function(a){this.a.height=a}},width:{configurable:!0,enumerable:!0,get:funct
     $(function() {
 
       //hover效果
+      var w = $('#container').width();
 
       $("#drag-area").mousemove(function(event) {
-        var yy = event.pageY;
-        var y2 = yy - 50;
         var xx = event.pageX;
-        var x2 = xx - 480;
+        var x2 = xx - w;
         $("#draggable").css({
           "left": x2 + "px",
         })
@@ -244,7 +243,8 @@ set:function(a){this.a.height=a}},width:{configurable:!0,enumerable:!0,get:funct
 
       //拖曳效果
       $("#draggable").draggable({
-        axis: "x"
+        axis: "x",
+        
       });
 
 
