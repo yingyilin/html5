@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><meta name="GCD" content="YTk3ODQ3ZWZhN2I4NzZmMzBkNTEwYjJlccb8320870719d238e26ec468dfe02f4"/>
+<html><head><meta name="GCD" content="YTk3ODQ3ZWZhN2I4NzZmMzBkNTEwYjJl2701adb12376e4430625e2f05c71a416"/>
   <meta charset="utf-8">
   <meta name="generator" content="Google Web Designer 8.0.1.0401">
   <meta name="template" content="Interstitial 3.0.0">
@@ -227,27 +227,26 @@ set:function(a){this.a.height=a}},width:{configurable:!0,enumerable:!0,get:funct
   </script>
   <script>
     $(function() {
-
       //hover效果
+      var isFroumTouchEvent = false; // 判斷是否由touch觸發
       var w = $('#container').width()/2;
 
-      $("#drag-area").mousemove(function(event) {
+      $("#container").on('touchstart', function() {
+        isFroumTouchEvent = true;
+      }).on('mousemove', function(event) {
+        if (isFroumTouchEvent) { return; } // 若由touch觸發、則跳出
         var xx = event.pageX;
         var x2 = xx - w;
         $("#draggable").css({
-          "left": event.pageX - $('#container').offset().left,
+          "left": event.pageX - $('#container').offset().left
         })
       });
 
-
-
       //拖曳效果
-/*       $("#draggable").draggable({
+      $("#draggable").draggable({
         axis: "x",
-        
-      }); */
-
-
+        contaiment: "#container",
+      });
     });
   </script>
   <script type="text/javascript" gwd-events="registration">gwd.actions.events.registerEventHandlers=function(event){gwd.actions.events.addHandler("track","mouseover",gwd.auto_TrackMouseover,false);gwd.actions.events.addHandler("track","swiperight",gwd.auto_TrackTrack,false);gwd.actions.events.addHandler("gwd-taparea_1","action",gwd.auto_Gwd_taparea_1Click,false)};gwd.actions.events.deregisterEventHandlers=function(event){gwd.actions.events.removeHandler("track","mouseover",gwd.auto_TrackMouseover,false);gwd.actions.events.removeHandler("track","swiperight",gwd.auto_TrackTrack,false);gwd.actions.events.removeHandler("gwd-taparea_1","action",gwd.auto_Gwd_taparea_1Click,false)};document.addEventListener("DOMContentLoaded",gwd.actions.events.registerEventHandlers);document.addEventListener("unload",gwd.actions.events.deregisterEventHandlers)</script>
