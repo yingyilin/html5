@@ -84,11 +84,14 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none; }
+
   .twentytwenty-container img {
     max-width: 100%;
     position: absolute;
     top: 0;
-    display: block; }
+    right: 0;
+    display: block;
+    }
   .twentytwenty-container.active .twentytwenty-overlay, .twentytwenty-container.active :hover.twentytwenty-overlay {
     background: rgba(0, 0, 0, 0); }
     .twentytwenty-container.active .twentytwenty-overlay .twentytwenty-before-label,
