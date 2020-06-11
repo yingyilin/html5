@@ -20,15 +20,15 @@
             background-size: 5px 5px;
         }
 
-        #crazyad {
+        /* #crazyad {
             zoom: calc(640 / 580);
-        }
+        } */
 
-        @media (orientation:landscape) {
+        /* @media (orientation:landscape) {
             body {
                 min-height: 640px;
             }
-        }
+        } */
 
         /*-勿動-*/
         img {
@@ -41,8 +41,9 @@
             height: 960px;
             position: absolute;
             left: 50%;
-            top: 50%;
-            transform: translateX(-50%) translateY(-25%);
+            /* top: 50%; */
+            margin-left: -320px;
+            /* margin-top: -480px; */
             z-index: 5;
             overflow: hidden;
             /*-可更換背景,其他參數勿動-*/
@@ -50,12 +51,9 @@
             background-size: contain;
         }
 
-        /* #camain div {
+        #camain div {
             position: absolute;
-            -webkit-animation-duration: 6s;
-            -webkit-animation-iteration-count: 1;
-            -webkit-animation-timing-function: linear;
-        } */
+        } 
 
         #click {
             width: 640px;
