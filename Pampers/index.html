@@ -19,9 +19,9 @@
             background-size: 5px 5px;
         }
 
-        #crazyad {
+        /* #crazyad {
             zoom: calc(640 / 640);
-        }
+        } */
 
         @media (orientation:landscape) {
             body {
@@ -96,14 +96,15 @@
             <!--若畫面區塊要讓使用者點選，click必留-->
             <div id="click">
                 <!-- 其他動態展示元件，可自行編改 -->
-               <div class="fadeout">
-                   <div class="large-8 columns">
+               <div>
+                   <div class="large-8 columns fadeout">
                        <div class="twentytwenty-container">
                            <img src="./images/frame-1.png" />
                            <img src="./images/frame-2.png" />
                        </div>
                    </div>
                </div>
+              <img class="fadeout drag-notice" src="./images/drag-notice.gif">
                <!-- 4秒後自動出現 -->
                <div class="fadeIn frame-3">
                    <a target="_blank" href="https://www.google.com.tw/?hl=zh-TW">
@@ -123,23 +124,31 @@
      <script>
          $(function () {
              $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({
-                 default_offset_pct: 0.5,
-                 before_label: 'January 2017', // Set a custom before label
-                 after_label: 'March 2017', // Set a custom after label
+                 default_offset_pct: 0.9,
              });
+         });
+     </script>
+     <script>
+         $(document).ready(function () {
+            $('.twentytwenty-handle').click(function (e) {
+                $('.drag-notice').fadeOut();
+            });
+        //    $('.twentytwenty-handle').mouseenter(function () {
+        //        $('.drag-notice').fadeOut();
+        //    });
+            
+            jQuery('.twentytwenty-handle')
+            .on('move', function(e) {
+            // move .mydiv horizontally
+            jQuery('.drag-notice').fadeOut();
+            })
 
-             // Mesure your images and divide by 2.
-             var imgWidth = $("twentytwenty-container img").width() / 2;
-
-             // On the container, apply a left offset of 50% (screen center) - minus half image width.
-             $("twentytwenty-container").css({ "position": "relative", "left": "calc(50% - " + imgWidth + "px)" });
+            jQuery('.twentytwenty-handle')
+            .on('movestart', function(e) {
+            // move .mydiv horizontally
+            jQuery('.drag-notice').fadeOut();
+            })
             
-            
-            
-            //  $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({
-            //      default_offset_pct: 0.3,
-            //      orientation: 'vertical'
-            //  });
          });
      </script>
 </body>

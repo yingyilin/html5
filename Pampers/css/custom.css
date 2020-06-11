@@ -59,6 +59,28 @@
     }
 }
 
+.drag-notice{
+    position: absolute;
+    left: 46%;
+    top:84%;
+    /* animation: drag-notice 0.5s infinite linear; */
+}
+
+@keyframes drag-notice {
+    0% {
+        transform: translateX(-1px);
+    }
+
+    40% {
+        transform: translateX(3px);
+    }
+
+    80%,
+    100% {
+        transform: translateX(-1px);
+    }
+}
+
 .twentytwenty-after-label,
 .twentytwenty-before-label {
     visibility: hidden;
