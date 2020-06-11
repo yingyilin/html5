@@ -1,0 +1,62 @@
+.twentytwenty-container {
+    height: 960px;
+    width: 640px;
+    /* background-color:rgba(0, 0, 0, 0.6); */
+}
+
+.fadeout {
+    animation: fadeout 0.5s forwards linear;
+    -webkit-animation: fadeout 0.5s forwards linear;
+    animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.frame-3 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+}
+
+
+.fadeIn{
+    animation: fadein 0.5s forwards linear;
+    -webkit-animation: fadein 0.5s forwards linear;
+    animation-delay: 1s;
+    -webkit-animation-delay: 3s;
+}
+
+@keyframes fadein {
+    0% { 
+        opacity: 0; 
+        visibility: hidden; 
+    }
+    100% { 
+        opacity: 1; 
+        visibility: visible; 
+    }
+}
+
+

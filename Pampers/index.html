@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=0.5, maximum-scale=1.0, minimum-scale=0.5, user-scalable=no" />
+
+    <!--以上勿動 -->
+    <title>Pampers</title>
+   <link href="css/foundation.css" rel="stylesheet" type="text/css" />
+   <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+   <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, SimHei;
+            font-size: 63%;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhJREFUeNpiZGBgOMOABpgYsAAKBQECDABS8gDW/CaiEQAAAABJRU5ErkJggg==");
+            background-size: 5px 5px;
+        }
+
+        #crazyad {
+            zoom: calc(640 / 580);
+        }
+
+        @media (orientation:landscape) {
+            body {
+                min-height: 640px;
+            }
+        }
+
+        /*-勿動-*/
+        img {
+            border: none;
+            vertical-align: top
+        }
+
+        #camain {
+            width: 640px;
+            height: 960px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-25%);
+            z-index: 5;
+            overflow: hidden;
+            /*-可更換背景,其他參數勿動-*/
+            /* background: url(images/bk.jpg) top center no-repeat #000; */
+            background-size: contain;
+        }
+
+        /* #camain div {
+            position: absolute;
+            -webkit-animation-duration: 6s;
+            -webkit-animation-iteration-count: 1;
+            -webkit-animation-timing-function: linear;
+        } */
+
+        #click {
+            width: 640px;
+            height: 960px;
+        }
+
+      
+        /*-以下其他動態展示元件，可自行編改 -*/
+        .twentytwenty-container {
+        width: 640px;
+        height: 960px;
+        margin: 0 auto;
+        }
+        
+    </style>
+
+    <!--主要為下載完圖片才開始跑動態的設定，getElementById名請自行更改為CSS有使用到動態並預設為暫停的名稱-->
+    <script type="text/javascript">
+        window.onload = function () {
+            changePosition();
+        };
+
+        function changePosition() {
+            document.getElementById("bk").style.webkitAnimationPlayState = "running";
+            document.getElementById("cw1").style.webkitAnimationPlayState = "running";
+            document.getElementById("cw2").style.webkitAnimationPlayState = "running";
+            document.getElementById("cw3").style.webkitAnimationPlayState = "running";
+        }
+    </script>
+
+</head>
+
+<body>
+    
+    <!-- <body>勿動 -->
+    <!--crazyad必留，用來包所有div -->
+    <div id="crazyad">
+        <!--必留-->
+        <div id="camain">
+            <!--若畫面區塊要讓使用者點選，click必留-->
+            <div id="click">
+                <!-- 其他動態展示元件，可自行編改 -->
+               <div class="row fadeout">
+                   <div class="large-8 columns">
+                       <div class="twentytwenty-container">
+                           <img src="./images/frame-1.png" />
+                           <img src="./images/frame-2.png" />
+                       </div>
+                   </div>
+               </div>
+               <!-- 三秒後自動出現 -->
+               <div class="fadeIn frame-3">
+                   <img src="./images/frame-3.png">
+               </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--勿動 -->
+    <script src="//m.vpadn.com/tpl/html5/vpadn-logo-728x90_mb.js"></script>
+     <script src="https://code.jquery.com/jquery-3.2.1.js"
+         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+     <script src="js/jquery.event.move.js"></script>
+     <script src="js/jquery.twentytwenty.js"></script>
+     <script>
+         $(function () {
+             $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({
+                 default_offset_pct: 0.7
+             });
+             $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({
+                 default_offset_pct: 0.3,
+                 orientation: 'vertical'
+             });
+         });
+     </script>
+</body>
+
+</html>
