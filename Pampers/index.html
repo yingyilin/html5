@@ -133,19 +133,19 @@
         $(document).ready(function () {
             
 
-            $('.twentytwenty-handle').click(function (e) {
-                $('.drag-notice').fadeOut();
-                $('#frame-1').removeClass('fadeout'); //移除未碰觸3秒自動fadeout
-                $('#frame-1').addClass('fadeout-delay '); //新增點擊後3秒自動fadeout
-                $('#frame-3').removeClass('fadeIn'); //移除未碰觸3秒自動fadein
-                $('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
+            // $('.twentytwenty-handle').click(function (e) {
+            //     $('.drag-notice').fadeOut();
+            //     $('#frame-1').removeClass('fadeout'); //移除未碰觸3秒自動fadeout
+            //     $('#frame-1').addClass('fadeout-delay '); //新增點擊後3秒自動fadeout
+            //     $('#frame-3').removeClass('fadeIn'); //移除未碰觸3秒自動fadein
+            //     $('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
 
-            });
+            // });
             
 
-            //  $('.twentytwenty-handle').on('movestart', function () { // 若由move觸發則移除click
-            //     $(".twentytwenty-handle").off('click');
-            // })
+             $('.twentytwenty-handle').on('movestart', function () { // 若由move觸發則移除click
+                $(".twentytwenty-handle").off('click');
+            })
             
 
             jQuery('.twentytwenty-handle')
@@ -157,15 +157,15 @@
                     jQuery('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
                 })
 
-            jQuery('.twentytwenty-handle')
-                .on('movestart', function (e) {
-                    // move .mydiv horizontally
-                    jQuery('.drag-notice').fadeOut();
-                    jQuery('#frame-1').removeClass('fadeout'); //移除未碰觸3秒自動fadeout
-                    jQuery('#frame-1').addClass('fadeout-delay '); //新增點擊後3秒自動fadeout
-                    jQuery('#frame-3').removeClass('fadeIn'); //移除未碰觸3秒自動fadein
-                    jQuery('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
-                })
+            // jQuery('.twentytwenty-handle')
+            //     .on('movestart', function (e) {
+            //         // move .mydiv horizontally
+            //         jQuery('.drag-notice').fadeOut();
+            //         jQuery('#frame-1').removeClass('fadeout'); //移除未碰觸3秒自動fadeout
+            //         jQuery('#frame-1').addClass('fadeout-delay '); //新增點擊後3秒自動fadeout
+            //         jQuery('#frame-3').removeClass('fadeIn'); //移除未碰觸3秒自動fadein
+            //         jQuery('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
+            //     })
 
         });
     </script>
