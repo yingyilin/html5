@@ -18,8 +18,8 @@
 .fadeout-delay {
     animation: fadeout 0.5s forwards linear;
     -webkit-animation: fadeout 0.5s forwards linear;
-    animation-delay: 8s;
-    -webkit-animation-delay: 8s;
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
 }
 
 @keyframes fadeout {
@@ -62,8 +62,8 @@
 .fadeIn-delay {
     animation: fadein 0.5s forwards linear;
     -webkit-animation: fadein 0.5s forwards linear;
-    animation-delay: 8s;
-    -webkit-animation-delay: 8s;
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
 }
 
 @keyframes fadein {

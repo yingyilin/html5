@@ -119,7 +119,7 @@
     <script src="//m.vpadn.com/tpl/html5/vpadn-logo-728x90_mb.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js"
         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
     <script src="js/jquery.event.move.js"></script>
     <script src="js/jquery.twentytwenty.js"></script>
     <script>
@@ -131,7 +131,7 @@
     </script>
     <script>
         $(document).ready(function () {
-
+            
 
             $('.twentytwenty-handle').click(function (e) {
                 $('.drag-notice').fadeOut();
@@ -141,6 +141,11 @@
                 $('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
 
             });
+            
+
+            //  $('.twentytwenty-handle').on('movestart', function () { // 若由move觸發則移除click
+            //     $(".twentytwenty-handle").off('click');
+            // })
             
 
             jQuery('.twentytwenty-handle')
