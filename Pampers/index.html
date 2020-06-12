@@ -7,7 +7,6 @@
         content="width=device-width, initial-scale=0.5, maximum-scale=1.0, minimum-scale=0.5, user-scalable=no" />
     <!--以上勿動 -->
     <title>Vpon</title>
-    <!-- <link href="css/foundation.css" rel="stylesheet" type="text/css" /> -->
     <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
@@ -68,7 +67,6 @@
             height: 960px;
         }
 
-        /*-勿動-*/
 
         /*-以下其他動態展示元件，可自行編改 -*/
     </style>
@@ -99,7 +97,7 @@
             <div id="click">
                 <!-- 其他動態展示元件，可自行編改 -->
                 <div>
-                    <div class="large-8 columns fadeout container">
+                    <div id="frame-1" class="fadeout">
                         <div class="twentytwenty-container">
                             <img src="./images/frame-1.png" />
                             <img src="./images/frame-2.png" />
@@ -108,7 +106,7 @@
                 </div>
                 <img class="fadeout drag-notice" src="./images/drag-notice.gif">
                 <!-- 4秒後自動出現 -->
-                <div class="fadeIn frame-3">
+                <div id="frame-3" class="fadeIn">
                     <a target="_blank" href="https://www.google.com.tw/?hl=zh-TW">
                         <img src="./images/frame-3.png">
                     </a>
@@ -131,23 +129,34 @@
     </script>
     <script>
         $(document).ready(function () {
+
+
             $('.twentytwenty-handle').click(function (e) {
                 $('.drag-notice').fadeOut();
+                $('#frame-1').removeClass('fadeout'); //移除未碰觸3秒自動fadeout
+                $('#frame-1').addClass('fadeout-delay '); //新增點擊後3秒自動fadeout
+                $('#frame-3').removeClass('fadeIn'); //移除未碰觸3秒自動fadein
+                $('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
+
             });
-            //    $('.twentytwenty-handle').mouseenter(function () {
-            //        $('.drag-notice').fadeOut();
-            //    });
 
             jQuery('.twentytwenty-handle')
                 .on('move', function (e) {
-                    // move .mydiv horizontally
                     jQuery('.drag-notice').fadeOut();
+                    jQuery('#frame-1').removeClass('fadeout'); //移除未碰觸3秒自動fadeout
+                    jQuery('#frame-1').addClass('fadeout-delay '); //新增點擊後3秒自動fadeout
+                    jQuery('#frame-3').removeClass('fadeIn'); //移除未碰觸3秒自動fadein
+                    jQuery('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
                 })
 
             jQuery('.twentytwenty-handle')
                 .on('movestart', function (e) {
                     // move .mydiv horizontally
                     jQuery('.drag-notice').fadeOut();
+                    jQuery('#frame-1').removeClass('fadeout'); //移除未碰觸3秒自動fadeout
+                    jQuery('#frame-1').addClass('fadeout-delay '); //新增點擊後3秒自動fadeout
+                    jQuery('#frame-3').removeClass('fadeIn'); //移除未碰觸3秒自動fadein
+                    jQuery('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
                 })
 
         });

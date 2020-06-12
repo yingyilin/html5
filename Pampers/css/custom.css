@@ -15,6 +15,13 @@
     -webkit-animation-delay: 4s;
 }
 
+.fadeout-delay {
+    animation: fadeout 0.5s forwards linear;
+    -webkit-animation: fadeout 0.5s forwards linear;
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
+}
+
 @keyframes fadeout {
     0% {
         opacity: 1;
@@ -37,7 +44,7 @@
     }
 }
 
-.frame-3 {
+#frame-3 {
     position: absolute;
     top: 0;
     right: 0;
@@ -46,6 +53,13 @@
 
 
 .fadeIn{
+    animation: fadein 0.5s forwards linear;
+    -webkit-animation: fadein 0.5s forwards linear;
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
+}
+
+.fadeIn-delay {
     animation: fadein 0.5s forwards linear;
     -webkit-animation: fadein 0.5s forwards linear;
     animation-delay: 4s;
@@ -62,6 +76,10 @@
         visibility: visible; 
     }
 }
+
+
+
+
 
 .drag-notice{
     position: absolute;
