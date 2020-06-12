@@ -63,7 +63,7 @@
     animation: fadein 0.5s forwards linear;
     -webkit-animation: fadein 0.5s forwards linear;
     animation-delay: 4s;
-    -webkit-animation-delay: 4s;
+    -webkit-animation-delay: 8s;
 }
 
 @keyframes fadein {
