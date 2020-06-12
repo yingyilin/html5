@@ -20,15 +20,19 @@
             background-size: 5px 5px;
         }
 
-        /* #crazyad {
-            zoom: calc(640 / 580);
-        } */
+       #crazyad {}
 
-        @media (orientation:landscape) {
-            body {
-                min-height: 960px;
+            @media (orientation:landscape) {
+                body {
+                    min-height: 960px;
+                }
             }
-        }
+
+            @media (orientation:portrait) {
+                body {
+                min-height: 960px;
+                }
+             }
 
         /*-勿動-*/
         img {
@@ -40,15 +44,16 @@
             width: 640px;
             height: 960px;
             position: absolute;
-            left: 50%;
-            top: 50%;
-            margin-left: -290px;
-            margin-top: -430px;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            margin:auto;
             z-index: 5;
             overflow: hidden;
             /*-可更換背景,其他參數勿動-*/
-            /* background: url(images/bk.jpg) top center no-repeat #000;
-            background-size: contain; */
+            background: url(images/bk.jpg) top center no-repeat #000;
+            background-size: contain;
         }
 
         /* #camain div {
@@ -59,8 +64,8 @@
         } */
 
         #click {
-            width: 580px;
-            height: 860px;
+            width: 640px;
+            height: 960px;
         }
 
         /*-勿動-*/
