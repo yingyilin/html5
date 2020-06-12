@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, minimum-scale=0.5, user-scalable=no" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=0.5, maximum-scale=1.0, minimum-scale=0.5, user-scalable=no" />
     <!--以上勿動 -->
-    <title>Pampers</title>
-   <link href="css/foundation.css" rel="stylesheet" type="text/css" />
-   <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
-   <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <title>Vpon</title>
+    <link href="css/foundation.css" rel="stylesheet" type="text/css" />
+    <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         body {
             margin: 0;
@@ -20,7 +21,7 @@
         }
 
         /* #crazyad {
-            zoom: calc(640 / 640);
+            zoom: calc(640 / 580);
         } */
 
         @media (orientation:landscape) {
@@ -39,35 +40,32 @@
             width: 640px;
             height: 960px;
             position: absolute;
-            left:50%;
-            top:50%;
-            margin-left: -320px;
-            margin-top: -480px;
+            left: 50%;
+            top: 50%;
+            margin-left: -290px;
+            margin-top: -430px;
             z-index: 5;
             overflow: hidden;
             /*-可更換背景,其他參數勿動-*/
-            /* background: url(images/bk.jpg) top center no-repeat #000; */
-            /* background-size: contain; */
+            /* background: url(images/bk.jpg) top center no-repeat #000;
+            background-size: contain; */
         }
 
-        #camain div {
+        /* #camain div {
             position: absolute;
-            left:0;
-        } 
+            -webkit-animation-duration: 6s;
+            -webkit-animation-iteration-count: 1;
+            -webkit-animation-timing-function: linear;
+        } */
 
         #click {
-            width: 640px;
-            height: 960px;
+            width: 580px;
+            height: 860px;
         }
 
-      
+        /*-勿動-*/
+
         /*-以下其他動態展示元件，可自行編改 -*/
-        .twentytwenty-container {
-        width: 640px;
-        height: 960px;
-        margin: 0 auto;
-        }
-        
     </style>
 
     <!--主要為下載完圖片才開始跑動態的設定，getElementById名請自行更改為CSS有使用到動態並預設為暫停的名稱-->
@@ -87,7 +85,6 @@
 </head>
 
 <body>
-    
     <!-- <body>勿動 -->
     <!--crazyad必留，用來包所有div -->
     <div id="crazyad">
@@ -96,61 +93,60 @@
             <!--若畫面區塊要讓使用者點選，click必留-->
             <div id="click">
                 <!-- 其他動態展示元件，可自行編改 -->
-               <div>
-                   <div class="large-8 columns fadeout">
-                       <div class="twentytwenty-container">
-                           <img src="./images/frame-1.png" />
-                           <img src="./images/frame-2.png" />
-                       </div>
-                   </div>
-               </div>
-              <img class="fadeout drag-notice" src="./images/drag-notice.gif">
-               <!-- 4秒後自動出現 -->
-               <div class="fadeIn frame-3">
-                   <a target="_blank" href="https://www.google.com.tw/?hl=zh-TW">
+                <div>
+                    <div class="large-8 columns fadeout container">
+                        <div class="twentytwenty-container">
+                            <img src="./images/frame-1.png" />
+                            <img src="./images/frame-2.png" />
+                        </div>
+                    </div>
+                </div>
+                <img class="fadeout drag-notice" src="./images/drag-notice.gif">
+                <!-- 4秒後自動出現 -->
+                <div class="fadeIn frame-3">
+                    <a target="_blank" href="https://www.google.com.tw/?hl=zh-TW">
                         <img src="./images/frame-3.png">
-                   </a>
-               </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    
     <!--勿動 -->
     <script src="//m.vpadn.com/tpl/html5/vpadn-logo-728x90_mb.js"></script>
-     <script src="https://code.jquery.com/jquery-3.2.1.js"
-         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-     <script src="js/jquery.event.move.js"></script>
-     <script src="js/jquery.twentytwenty.js"></script>
-     <script>
-         $(function () {
-             $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({
-                 default_offset_pct: 0.9,
-             });
-         });
-     </script>
-     <script>
-         $(document).ready(function () {
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="js/jquery.event.move.js"></script>
+    <script src="js/jquery.twentytwenty.js"></script>
+    <script>
+        $(function () {
+            $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({
+                default_offset_pct: 0.9,
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
             $('.twentytwenty-handle').click(function (e) {
                 $('.drag-notice').fadeOut();
             });
-        //    $('.twentytwenty-handle').mouseenter(function () {
-        //        $('.drag-notice').fadeOut();
-        //    });
-            
-            jQuery('.twentytwenty-handle')
-            .on('move', function(e) {
-            // move .mydiv horizontally
-            jQuery('.drag-notice').fadeOut();
-            })
+            //    $('.twentytwenty-handle').mouseenter(function () {
+            //        $('.drag-notice').fadeOut();
+            //    });
 
             jQuery('.twentytwenty-handle')
-            .on('movestart', function(e) {
-            // move .mydiv horizontally
-            jQuery('.drag-notice').fadeOut();
-            })
-            
-         });
-     </script>
+                .on('move', function (e) {
+                    // move .mydiv horizontally
+                    jQuery('.drag-notice').fadeOut();
+                })
+
+            jQuery('.twentytwenty-handle')
+                .on('movestart', function (e) {
+                    // move .mydiv horizontally
+                    jQuery('.drag-notice').fadeOut();
+                })
+
+        });
+    </script>
 </body>
 
 </html>
