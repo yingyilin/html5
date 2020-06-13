@@ -18,8 +18,8 @@
 .fadeout-delay {
     animation: fadeout 0.5s forwards linear;
     -webkit-animation: fadeout 0.5s forwards linear;
-    animation-delay: 5s;
-    -webkit-animation-delay: 5s;
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
 }
 
 @keyframes fadeout {
@@ -62,8 +62,8 @@
 .fadeIn-delay {
     animation: fadein 0.5s forwards linear;
     -webkit-animation: fadein 0.5s forwards linear;
-    animation-delay: 5s;
-    -webkit-animation-delay: 5s;
+    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
 }
 
 @keyframes fadein {
@@ -83,8 +83,9 @@
 
 .drag-notice{
     position: absolute;
-    left: 46%;
+    left: 45%;
     top:84%;
+    pointer-events: none;
     /* animation: drag-notice 0.5s infinite linear; */
 }
 
