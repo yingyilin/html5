@@ -20,19 +20,19 @@
             background-size: 5px 5px;
         }
 
-       #crazyad {}
+        #crazyad {}
 
-            @media (orientation:landscape) {
-                body {
-                    min-height: 960px;
-                }
-            }
-
-            @media (orientation:portrait) {
-                body {
+        @media (orientation:landscape) {
+            body {
                 min-height: 960px;
-                }
-             }
+            }
+        }
+
+        @media (orientation:portrait) {
+            body {
+                min-height: 960px;
+            }
+        }
 
         /*-勿動-*/
         img {
@@ -44,11 +44,11 @@
             width: 640px;
             height: 960px;
             position: absolute;
-            top:0;
-            right:0;
-            bottom:0;
-            left:0;
-            margin:auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
             z-index: 5;
             overflow: hidden;
             /*-可更換背景,其他參數勿動-*/
@@ -131,7 +131,7 @@
     </script>
     <script>
         $(document).ready(function () {
-            
+
 
             // $('.twentytwenty-handle').click(function (e) {
             //     $('.drag-notice').fadeOut();
@@ -141,12 +141,12 @@
             //     $('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
 
             // });
-            
 
-             $('.twentytwenty-handle').on('movestart', function () { // 若由move觸發則移除click
+
+            $('.twentytwenty-handle').on('movestart', function () { // 若由move觸發則移除click
                 $(".twentytwenty-handle").off('click');
             })
-            
+
 
             $('.twentytwenty-handle')
                 .on('move', function (e) {
@@ -157,15 +157,14 @@
                     $('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
                 })
 
-            // jQuery('.twentytwenty-handle')
-            //     .on('movestart', function (e) {
-            //         // move .mydiv horizontally
-            //         jQuery('.drag-notice').fadeOut();
-            //         jQuery('#frame-1').removeClass('fadeout'); //移除未碰觸3秒自動fadeout
-            //         jQuery('#frame-1').addClass('fadeout-delay '); //新增點擊後3秒自動fadeout
-            //         jQuery('#frame-3').removeClass('fadeIn'); //移除未碰觸3秒自動fadein
-            //         jQuery('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
-            //     })
+            jQuery('.twentytwenty-handle')
+                .on('movestart', function (e) {
+                     $('.drag-notice').fadeOut();
+                     $('#frame-1').removeClass('fadeout'); //移除未碰觸3秒自動fadeout
+                     $('#frame-1').addClass('fadeout-delay '); //新增點擊後3秒自動fadeout
+                     $('#frame-3').removeClass('fadeIn'); //移除未碰觸3秒自動fadein
+                     $('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
+                })
 
         });
     </script>
