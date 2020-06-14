@@ -151,19 +151,20 @@
             $('.twentytwenty-handle')
                 .on('move', function (e) {
                     $('.drag-notice').fadeOut();
-                    $('#frame-1').removeClass('fadeout'); //移除未碰觸3秒自動fadeout
-                    $('#frame-1').addClass('fadeout-delay '); //新增點擊後3秒自動fadeout
-                    $('#frame-3').removeClass('fadeIn'); //移除未碰觸3秒自動fadein
-                    $('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
+
+                    //移除未碰觸3秒自動fadeout )//新增點擊後3秒自動fadeout
+                    $('#frame-1').removeClass('fadeout').addClass('fadeout-delay '); 
+                     //移除未碰觸3秒自動fadein //新增點擊後3秒自動fadein
+                    $('#frame-3').removeClass('fadeIn').addClass('fadeIn-delay'); 
                 })
 
             jQuery('.twentytwenty-handle')
                 .on('movestart', function (e) {
                      $('.drag-notice').fadeOut();
-                     $('#frame-1').removeClass('fadeout'); //移除未碰觸3秒自動fadeout
-                     $('#frame-1').addClass('fadeout-delay '); //新增點擊後3秒自動fadeout
-                     $('#frame-3').removeClass('fadeIn'); //移除未碰觸3秒自動fadein
-                     $('#frame-3').addClass('fadeIn-delay'); //新增點擊後3秒自動fadein
+                     //移除未碰觸3秒自動fadeout )//新增點擊後3秒自動fadeout
+                     $('#frame-1').removeClass('fadeout').addClass('fadeout-delay ');
+                     //移除未碰觸3秒自動fadein //新增點擊後3秒自動fadein
+                     $('#frame-3').removeClass('fadeIn').addClass('fadeIn-delay');
                 })
 
         });
