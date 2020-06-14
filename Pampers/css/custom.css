@@ -84,7 +84,7 @@
 .drag-notice{
     position: absolute;
     left: 45%;
-    top:84%;
+    top: 774px;
     pointer-events: none;
     /* animation: drag-notice 0.5s infinite linear; */
 }
